@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-sample_table = pd.read_csv('generated_polling_sample.csv')
+sample_table = pd.read_csv('generated_polling_sample-5kv3.csv')
 
 # Aggregate sample data by state and calculate support proportions
 state_support = sample_table.groupby(['state', 'predicted_vote']).size().unstack(fill_value=0)
@@ -22,7 +22,7 @@ for state in state_support.index:
     # Get the Democrat and Republican proportions
     democrat_pct = state_support.loc[state, 'Democratic_pct']
     republican_pct = state_support.loc[state, 'Republican_pct']
-    total_votes = sample_table[sample_table['state'] == state].shape[0]
+    total_votes = sample_table[sample_table['state'] == state].shape[0]  # Sample size for the state
 
     # Calculate the pooled proportion
     pooled_pct = (democrat_pct + republican_pct) / 2
@@ -76,9 +76,11 @@ winner_counts = results_df['likely_winner'].value_counts()
 # Create bar graph for likely winner
 plt.figure(figsize=(8, 6))
 winner_counts.plot(kind='bar', stacked=True, color=['blue', 'red'])
-plt.title('Likely Winners by Party')
-plt.ylabel('Number of States')
-plt.xticks(rotation=0)
+plt.title('Predicted Winner by Party', fontsize=22, weight='bold')
+plt.ylabel('Number of States', fontsize=20, weight='bold')
+plt.xlabel('Party ', fontsize=20, weight='bold')
+plt.yticks(rotation=0, fontsize=18)
+plt.xticks(rotation=0, fontsize=18)
 plt.tight_layout()
 plt.show()
 
@@ -88,23 +90,26 @@ heatmap_data = results_df[['State', 'Democrat Support', 'Republican Support']]
 # Set the state as the index for the heatmap
 heatmap_data = heatmap_data.set_index('State')
 
-# Create the heatmap with states on the y-axis (horizontal)
+# Create the heatmap, with the states on the y-axis and parties on the x-axis
 plt.figure(figsize=(14, 10))
-
-# Create the heatmap, this time keeping the states on the y-axis and parties on the x-axis
-sns.heatmap(heatmap_data, annot=True, cmap='coolwarm_r', center=0.5, cbar_kws={'label': 'Support Percentage (%)'})
-
-plt.title('Democratic and Republican Support Percentages Across 50 States')
-plt.ylabel('State')
-plt.xlabel('Party')
+sns.heatmap(heatmap_data, annot=True, cmap='coolwarm_r', center=0.5, cbar_kws={'label': 'Support Percentage (%)'}
+).figure.axes[-1].yaxis.label.set_size(16)
+plt.title('Democrat & Republican Support % by 50 States', fontsize=22, weight='bold')
+plt.ylabel('State', fontsize=20, weight='bold')
+plt.xlabel('Party', fontsize=20, weight='bold')
+plt.yticks(rotation=0, fontsize=12)
+plt.xticks(rotation=0, fontsize=18)
 plt.tight_layout()
 plt.show()
 
+# Create scatterplot for Margin of Error
 plt.figure(figsize=(12, 10))
-sns.scatterplot(data=results_df, x='Margin of Error', y='State', hue='likely_winner', color='blue', s=100)
-plt.title('Margin of Error by State')
-plt.xlabel('Margin of Error')
-plt.ylabel('State')
+sns.scatterplot(data=results_df, x='Margin of Error', y='State', hue='likely_winner', palette={'Democrat': 'blue', 'Republican': 'red'}, s=100)
+plt.title('Margin of Error by State', fontsize=22, weight='bold')
+plt.xlabel('Margin of Error', fontsize=20, weight='bold')
+plt.ylabel('State', fontsize=20, weight='bold')
+plt.yticks(rotation=0, fontsize=12)
+plt.xticks(rotation=0, fontsize=18)
 plt.tight_layout()
 plt.show()
 
