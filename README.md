@@ -9,6 +9,9 @@ You will need Python with the following libraries installed:
 	- seaborn
 
 **Step 1:**
+Download all the files locally and installed a any source code editor.
+
+**Step 2:**
 To run the test you will need to populate the 5 .csv files containing the polling datasets with up to date data on each of the 50 state's population, their respective predicted polling percentage as well as their demographic of age, gender and ethnic groups. These include:
 
 	- 0.state_population_data
@@ -17,14 +20,14 @@ To run the test you will need to populate the 5 .csv files containing the pollin
 	- 3.polling_data_gender
 	- 4.polling_data_ethnic
 
-**Step 2:**
+**Step 3:**
 Once updated, you can run the "Sample_Generator" script and it will create a .csv file called "generated_polling_sample" with 2000 samples of potential predicted votes. You are able to adjust sample size by simple changing it in the code:
 
     sample_size  =  2000
 
 Keep in mind too small of a sample size will result in bigger Margin of Error for each state as less samples mean data will be more skewed and bias. While too big of a sample size will cause an unrealistic z-score making the standard deviation too far from the expected mean.
 
-**Step 3:**
+**Step 4:**
 Once the generated sample has been created you can run the "Prediction_Analysis" script and it will create another .csv file called "predicted_results" where you can see which state is likely to vote for which  party along with statistics of the Margin of Error, z-score, p_value, Significance and likely winner. You would also see the average support of each party overall and the average Margin of Error.
 
 Three visuals will be displayed:
