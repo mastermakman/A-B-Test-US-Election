@@ -20,7 +20,7 @@ for dataset in [state_polling, age_polling, gender_polling, ethnic_polling]:
 state_population = state_population.dropna(subset=['population'])
 
 # Total sample size
-sample_size = 500000
+sample_size = 2000
 
 # Calculate state-level allocation based on population
 state_population['sample_allocation'] = (state_population['population'] / state_population['population'].sum()) * sample_size
