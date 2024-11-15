@@ -38,6 +38,7 @@ The model can be kept up to date by changing the population size of each state a
 
 # The Sample_Generator script
 This script will generate a sample of 50,000 votes at random based on the numbers in the 5 datasets. It will then create a new .csv dataframe with a table with 6 columns of information about the voters demographic and their predicted_vote:
+
 	- State
  
 	- Population
