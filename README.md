@@ -54,7 +54,7 @@ RealClearPolitics -https://www.realclearpolling.com/latest-polls/president/gener
 The Hill's Election Poll Tracker - https://elections2024.thehill.com/national/
 
 
-The datasets gathered were put into .csv files to be imported into the sample_generator script to generate a set of 5,000 sample data. The sample data would then be processed by the predicted_analysis script and thus could predict the likely winner of each state and the overall winner.
+The datasets gathered were put into .csv files to be imported into the sample_generator script to generate a set of 2,000 sample data. The sample data would then be processed by the predicted_analysis script and thus could predict the likely winner of each state and the overall winner.
 
 # The Datasets
 The polling data consists of 5 tables:
@@ -117,7 +117,7 @@ p = proportion of pooled votes as a percentage
 n = sample size
 
 ## z-score & Standard Error (SE) 
-The purpose of the z-score is to measure how far the observed result is from the expected mean, expressed in terms of standard deviations. It is used to standardize results and determine the statistical significance of the data. The z-score is heavily reliant on the sample size, here a sample size of 5000 gives a score of -3 to +3 with one or two exceptions. In this case to calculate the z-score, we use the equation:
+The purpose of the z-score is to measure how far the observed result is from the expected mean, expressed in terms of standard deviations. It is used to standardize results and determine the statistical significance of the data. The z-score is heavily reliant on the sample size, here a sample size of 2000 gives a score of -3 to +3 with one or two exceptions. In this case to calculate the z-score, we use the equation:
 
 z= (Democrat Support − Republican Support) / Standard Error​
 
@@ -161,7 +161,7 @@ Significant = There is a statistical difference in support between the 2 parties
 Not Significant = There isn't much evidence to support there's a difference in support between the 2 parties for the state
 
 # The results
-With a sample size of 5000, the results show that Democrats have an overall higher average support (54.5%) than the Republicans (45.5%) with an average Margin of Error of (14.2%).
+With a sample size of 2000, the results show that Democrats have an overall higher average support (54.5%) than the Republicans (45.5%) with an average Margin of Error of (14.2%).
 
 The statistics also show that the Democrats have more states with significant difference (18) than the Republicans (6) meaning there is a larger gaps of support in more states for the Democrats.  
 
