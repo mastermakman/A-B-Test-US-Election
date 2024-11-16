@@ -72,14 +72,14 @@ The polling data consists of 5 tables:
 		- Columns: respective demographic (state, age, gender, ethnic), democrat, republican, undecided
 
 
-The samples generated depends on the data in these 5 tables. The overall sample size is generated proportionally in relation to the population size of each state (0.state_population_data), so the higher the population, the more samples it would generate from that state. For example, California has a population of 38,965,193 out of the total 334,235,923, giving it a 11.66% share of the overall sample size, which makes up 5,830 of the 5,000 samples. 
+The samples generated depends on the data in these 5 tables. The overall sample size is generated proportionally in relation to the population size of each state (0.state_population_data), so the higher the population, the more samples it would generate from that state. For example, California has a population of 38,965,193 out of the total 334,235,923, giving it a 11.66% share of the overall sample size, which makes up 233 of the 2000 samples. 
 
-It would then take the percentages of each of the following demographic tables and allocate a new column called "predicted_vote" where the result would be either, 'democrat', 'republican' or 'undecided'. Again the size of the sample for each demographic is proportional to the percentage that are polled to vote for one of the three options. For example, 46% of the samples aged 45-64 are polled to vote for democrat, therefore from the 5,830 California samples, there would be 2,682 that would be allocated to the predicted_vote of democrat.
+It would then take the percentages of each of the following demographic tables and allocate a new column called "predicted_vote" where the result would be either, 'democrat', 'republican' or 'undecided'. Again the size of the sample for each demographic is proportional to the percentage that are polled to vote for one of the three options. For example, 46% of the samples aged 45-64 are polled to vote for democrat, therefore from the 233 California samples, there would be 107 that would be allocated to the predicted_vote of democrat.
 
 The model can be kept up to date by changing the population size of each state and the polled percentages for each party.
 
 # The Sample_Generator script
-This script will generate a sample of 5,000 votes at random based on the numbers in the 5 datasets. It will then create a new .csv dataframe with a table with 6 columns of information about the voters demographic and their predicted_vote:
+This script will generate a sample of 2000 votes at random based on the numbers in the 5 datasets. It will then create a new .csv dataframe with a table with 6 columns of information about the voters demographic and their predicted_vote:
 
 	- State
 	- Population
