@@ -125,7 +125,7 @@ Where:
 
 Standard Error = Standard Deviation of the sampling distribution
 
-The Standard Error is a measure of how much the sample data might differ from the true value. If we take multiple samples, the result will not be the same each time. The SE tells us how much those results are likely to vary. A smaller SE means the sample result is closer to the true value and a large SE  means the results are less reliable. It is calculated with the equation:
+The Standard Error is a measure of how much the sample data might differ from the mean. If we take multiple samples, the result will not be the same each time. The SE tells us how much those results are likely to vary. A smaller SE means the sample result is closer to the true value and a large SE  means the results are less reliable. It is calculated with the equation:
 
 ![enter image description here](https://iili.io/2A8usl2.png)
 
