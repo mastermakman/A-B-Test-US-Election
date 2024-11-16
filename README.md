@@ -21,14 +21,14 @@ To run the test you will need to populate the 5 .csv files containing the pollin
 	- 4.polling_data_ethnic
 
 **Step 3:**
-Once updated, you can run the "Sample_Generator" script and it will create a .csv file called "generated_polling_sample" with 2000 samples of potential predicted votes. You are able to adjust sample size by simple changing it in the code:
+Once updated, you can run the "Sample_Generator" script and it will create a .csv file called "generated_polling_sample.csv" with 2000 samples of potential predicted votes. You are able to adjust sample size by simple changing it in the code:
 
     sample_size  =  2000
 
 Keep in mind too small of a sample size will result in bigger Margin of Error for each state as less samples mean data will be more skewed and bias. While too big of a sample size will cause an unrealistic z-score making the standard deviation too far from the expected mean.
 
 **Step 4:**
-Once the generated sample has been created you can run the "Prediction_Analysis" script and it will create another .csv file called "predicted_results" where you can see which state is likely to vote for which  party along with statistics of the Margin of Error, z-score, p_value, Significance and likely winner. You would also see the average support of each party overall and the average Margin of Error.
+Once the generated sample has been created you can run the "Prediction_Analysis" script and it will create another .csv file called "predicted_results_table.csv" where you can see which state is likely to vote for which  party along with statistics of the Margin of Error, z-score, p_value, Significance and likely winner. You would also see the average support of each party overall and the average Margin of Error.
 
 Three visuals will be displayed:
 
